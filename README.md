@@ -1,0 +1,4 @@
+# OpenGLTextureLoader
+This is a class I made in order to load RAW and TGA files and create an appropriate texture to be mapped to meshes. This code contains a function to convert a BMP file to a RAW file. It does this by copying the header from the file to an appropriate struct. The width and height of the image are then read from the header struct. This information is then used to read all of the pixel colour data and then ouputted to a new RAW file.
+
+There is also a function to load a TGA file from memory. This works by reading in the header of the file. This header is then checked against to see if the file is compressed. If it is the amount of memory the pixel data takes up is calculated using the width, height and data per pixel and then read into a vector. If it is compressed then the compressed format is loaded and unpacked. The pixel values are then reversed so they are the correct way round.
